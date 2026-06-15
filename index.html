@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Portugal Squad Reveal 2026</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#006600,#003300);
+min-height:100vh;
+color:white;
+overflow-x:hidden;
+}
+
+.hero{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+text-align:center;
+}
+
+.flag{
+width:200px;
+animation:zoomIn 2s ease;
+}
+
+.hero h1{
+font-size:70px;
+font-weight:800;
+margin-top:20px;
+opacity:0;
+animation:slideUp 1s ease forwards;
+animation-delay:1s;
+}
+
+.hero p{
+font-size:22px;
+opacity:0;
+animation:slideUp 1s ease forwards;
+animation-delay:1.5s;
+}
+
+.scroll-btn{
+margin-top:30px;
+padding:15px 35px;
+background:#ff0000;
+border-radius:50px;
+text-decoration:none;
+color:white;
+font-weight:700;
+opacity:0;
+animation:slideUp 1s ease forwards;
+animation-delay:2s;
+}
+
+.squad{
+padding:80px 8%;
+}
+
+.title{
+text-align:center;
+font-size:50px;
+margin-bottom:50px;
+}
+
+.players{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.player{
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(12px);
+padding:25px;
+border-radius:20px;
+text-align:center;
+opacity:0;
+transform:translateY(100px);
+}
+
+.player.show{
+animation:reveal .8s forwards;
+}
+
+.player h3{
+font-size:24px;
+margin-bottom:10px;
+color:#ffd700;
+}
+
+.player p{
+color:#ddd;
+}
+
+footer{
+padding:40px;
+text-align:center;
+background:black;
+margin-top:50px;
+}
+
+@keyframes zoomIn{
+from{
+transform:scale(0);
+}
+to{
+transform:scale(1);
+}
+}
+
+@keyframes slideUp{
+from{
+opacity:0;
+transform:translateY(50px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+@keyframes reveal{
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:40px;
+}
+
+.hero p{
+font-size:18px;
+}
+
+.flag{
+width:150px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+
+<img class="flag"
+src="https://flagcdn.com/w320/pt.png"
+alt="Portugal Flag">
+
+<h1>PORTUGAL</h1>
+
+<p>FIFA World Cup 2026 Squad Reveal</p>
+
+<a href="#squad" class="scroll-btn">
+Reveal Squad
+</a>
+
+</section>
+
+<section id="squad" class="squad">
+
+<h2 class="title">Official Squad</h2>
+
+<div class="players">
+
+<div class="player">
+<h3>Cristiano Ronaldo</h3>
+<p>Forward</p>
+</div>
+
+<div class="player">
+<h3>Bruno Fernandes</h3>
+<p>Midfielder</p>
+</div>
+
+<div class="player">
+<h3>Bernardo Silva</h3>
+<p>Midfielder</p>
+</div>
+
+<div class="player">
+<h3>Rafael Leão</h3>
+<p>Forward</p>
+</div>
+
+<div class="player">
+<h3>João Félix</h3>
+<p>Forward</p>
+</div>
+
+<div class="player">
+<h3>Vitinha</h3>
+<p>Midfielder</p>
+</div>
+
+<div class="player">
+<h3>Rúben Dias</h3>
+<p>Defender</p>
+</div>
+
+<div class="player">
+<h3>Diogo Costa</h3>
+<p>Goalkeeper</p>
+</div>
+
+<div class="player">
+<h3>Nuno Mendes</h3>
+<p>Defender</p>
+</div>
+
+<div class="player">
+<h3>João Cancelo</h3>
+<p>Defender</p>
+</div>
+
+<div class="player">
+<h3>Pedro Neto</h3>
+<p>Winger</p>
+</div>
+
+<div class="player">
+<h3>Gonçalo Ramos</h3>
+<p>Striker</p>
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<h2>🇵🇹 Portugal World Cup 2026 🇵🇹</h2>
+<p>Squad Reveal Experience</p>
+
+</footer>
+
+<script>
+
+const players =
+document.querySelectorAll(".player");
+
+const observer =
+new IntersectionObserver(entries=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+const index =
+[...players].indexOf(entry.target);
+
+setTimeout(()=>{
+
+entry.target.classList.add("show");
+
+},index*300);
+
+}
+
+});
+
+});
+
+players.forEach(player=>{
+observer.observe(player);
+});
+
+</script>
+
+</body>
+</html>
