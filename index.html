@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Portugal Squad Reveal 2026</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -15,11 +14,11 @@ margin:0;
 padding:0;
 box-sizing:border-box;
 font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
 }
 
 body{
-background:linear-gradient(135deg,#006600,#003300);
-min-height:100vh;
+background:linear-gradient(135deg,#006400,#001f0f);
 color:white;
 overflow-x:hidden;
 }
@@ -27,111 +26,131 @@ overflow-x:hidden;
 .hero{
 height:100vh;
 display:flex;
+flex-direction:column;
 justify-content:center;
 align-items:center;
-flex-direction:column;
 text-align:center;
+padding:20px;
 }
 
 .flag{
-width:200px;
-animation:zoomIn 2s ease;
+width:220px;
+animation:zoom 2s ease;
 }
 
 .hero h1{
 font-size:70px;
 font-weight:800;
 margin-top:20px;
-opacity:0;
-animation:slideUp 1s ease forwards;
-animation-delay:1s;
+animation:slideDown 1.5s ease;
 }
 
 .hero p{
 font-size:22px;
-opacity:0;
-animation:slideUp 1s ease forwards;
-animation-delay:1.5s;
+margin-top:10px;
+color:#ddd;
+animation:fadeIn 2s ease;
 }
 
-.scroll-btn{
+.btn{
 margin-top:30px;
-padding:15px 35px;
+padding:15px 40px;
 background:#ff0000;
 border-radius:50px;
-text-decoration:none;
 color:white;
+text-decoration:none;
 font-weight:700;
-opacity:0;
-animation:slideUp 1s ease forwards;
-animation-delay:2s;
+transition:.4s;
 }
 
-.squad{
-padding:80px 8%;
+.btn:hover{
+transform:scale(1.1);
 }
 
-.title{
+.section-title{
 text-align:center;
 font-size:50px;
+padding-top:50px;
 margin-bottom:50px;
 }
 
 .players{
+padding:20px 8% 80px;
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
 }
 
 .player{
 background:rgba(255,255,255,.08);
 backdrop-filter:blur(12px);
-padding:25px;
-border-radius:20px;
-text-align:center;
+border-radius:25px;
+overflow:hidden;
+
 opacity:0;
 transform:translateY(100px);
+
+transition:.5s;
 }
 
 .player.show{
-animation:reveal .8s forwards;
+animation:reveal 1s forwards;
+}
+
+.player img{
+width:100%;
+height:350px;
+object-fit:cover;
+transition:.5s;
+}
+
+.player:hover img{
+transform:scale(1.1);
 }
 
 .player h3{
-font-size:24px;
-margin-bottom:10px;
-color:#ffd700;
+padding-top:15px;
+text-align:center;
+color:#FFD700;
+font-size:26px;
 }
 
 .player p{
+text-align:center;
+padding-bottom:20px;
 color:#ddd;
 }
 
+.player:hover{
+box-shadow:0 0 30px rgba(255,215,0,.6);
+transform:translateY(-10px);
+}
+
 footer{
-padding:40px;
 text-align:center;
+padding:40px;
 background:black;
-margin-top:50px;
 }
 
-@keyframes zoomIn{
-from{
-transform:scale(0);
-}
-to{
-transform:scale(1);
-}
+@keyframes zoom{
+from{transform:scale(0);}
+to{transform:scale(1);}
 }
 
-@keyframes slideUp{
+@keyframes slideDown{
 from{
 opacity:0;
-transform:translateY(50px);
+transform:translateY(-100px);
 }
 to{
 opacity:1;
 transform:translateY(0);
 }
+}
+
+@keyframes fadeIn{
+from{opacity:0;}
+to{opacity:1;}
 }
 
 @keyframes reveal{
@@ -144,7 +163,7 @@ transform:translateY(0);
 @media(max-width:768px){
 
 .hero h1{
-font-size:40px;
+font-size:42px;
 }
 
 .hero p{
@@ -159,106 +178,75 @@ width:150px;
 
 </style>
 </head>
-
 <body>
 
 <section class="hero">
 
 <img class="flag"
 src="https://flagcdn.com/w320/pt.png"
-alt="Portugal Flag">
+alt="Portugal">
 
-<h1>PORTUGAL</h1>
+<h1>PORTUGAL 2026</h1>
 
-<p>FIFA World Cup 2026 Squad Reveal</p>
+<p>Official World Cup Squad Reveal</p>
 
-<a href="#squad" class="scroll-btn">
-Reveal Squad
-</a>
+<a href="#squad" class="btn">Reveal Squad</a>
 
 </section>
 
-<section id="squad" class="squad">
-
-<h2 class="title">Official Squad</h2>
+<h2 class="section-title" id="squad">
+🇵🇹 PORTUGAL SQUAD 🇵🇹
+</h2>
 
 <div class="players">
 
 <div class="player">
+<img src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?w=600" alt="">
 <h3>Cristiano Ronaldo</h3>
 <p>Forward</p>
 </div>
 
 <div class="player">
+<img src="https://images.unsplash.com/photo-1560272564-c83b66b1ad12?w=600" alt="">
 <h3>Bruno Fernandes</h3>
 <p>Midfielder</p>
 </div>
 
 <div class="player">
+<img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=600" alt="">
 <h3>Bernardo Silva</h3>
 <p>Midfielder</p>
 </div>
 
 <div class="player">
+<img src="https://images.unsplash.com/photo-1553778263-73a83bab9b0c?w=600" alt="">
 <h3>Rafael Leão</h3>
 <p>Forward</p>
 </div>
 
 <div class="player">
-<h3>João Félix</h3>
-<p>Forward</p>
-</div>
-
-<div class="player">
+<img src="https://images.unsplash.com/photo-1543357480-c60d40007a3f?w=600" alt="">
 <h3>Vitinha</h3>
 <p>Midfielder</p>
 </div>
 
 <div class="player">
+<img src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=600" alt="">
 <h3>Rúben Dias</h3>
 <p>Defender</p>
 </div>
 
-<div class="player">
-<h3>Diogo Costa</h3>
-<p>Goalkeeper</p>
 </div>
-
-<div class="player">
-<h3>Nuno Mendes</h3>
-<p>Defender</p>
-</div>
-
-<div class="player">
-<h3>João Cancelo</h3>
-<p>Defender</p>
-</div>
-
-<div class="player">
-<h3>Pedro Neto</h3>
-<p>Winger</p>
-</div>
-
-<div class="player">
-<h3>Gonçalo Ramos</h3>
-<p>Striker</p>
-</div>
-
-</div>
-
-</section>
 
 <footer>
-
-<h2>🇵🇹 Portugal World Cup 2026 🇵🇹</h2>
+<h2>Portugal World Cup 2026</h2>
 <p>Squad Reveal Experience</p>
-
 </footer>
 
 <script>
 
 const players =
-document.querySelectorAll(".player");
+document.querySelectorAll('.player');
 
 const observer =
 new IntersectionObserver(entries=>{
@@ -272,7 +260,7 @@ const index =
 
 setTimeout(()=>{
 
-entry.target.classList.add("show");
+entry.target.classList.add('show');
 
 },index*300);
 
